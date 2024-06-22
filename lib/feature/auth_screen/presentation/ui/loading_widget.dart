@@ -14,7 +14,7 @@ class Loading extends StatelessWidget {
       body: Center(
         child: LoadingAnimationWidget.fourRotatingDots(
           size: 6.h,
-          color: Colors.white54,
+          color: Colors.blueAccent,
         ),
       ),
     );
