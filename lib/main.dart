@@ -8,7 +8,7 @@ import 'package:search_git_hub/feature/app_root/presentation/ui/app_root.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+ // await Firebase.initializeApp();
   await dotenv.load(fileName: ".env");
   runApp(AppRoot());
 
