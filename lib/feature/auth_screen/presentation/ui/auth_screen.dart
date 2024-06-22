@@ -2,15 +2,14 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:github_sign_in_plus/github_sign_in_plus.dart';
-import 'package:search_git_hub/core/api/api_service.dart';
 import 'package:search_git_hub/feature/app_root/presentation/ui/app_text_dialog.dart';
 import 'package:search_git_hub/feature/auth_screen/presentation/bloc/auth_bloc.dart';
 import 'package:search_git_hub/feature/auth_screen/presentation/bloc/auth_event.dart';
 import 'package:search_git_hub/feature/auth_screen/presentation/bloc/auth_state.dart';
 import 'package:search_git_hub/feature/auth_screen/presentation/ui/loading_widget.dart';
 import 'package:search_git_hub/feature/search_screen/presentation/ui/SearchScreen.dart';
-import 'package:search_git_hub/secret_key.dart';
 import 'package:http/http.dart' as http;
 
 class AuthScreen extends StatefulWidget {
@@ -21,9 +20,10 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
+
   final GitHubSignIn gitHubSignIn = GitHubSignIn(
-    clientId: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
+    clientId: dotenv.env['GITHUB_CLIENT_ID']!,
+    clientSecret: dotenv.env['GITHUB_CLIENT_SECRET']!,
     redirectUrl: 'https://seach-git-hub-1218.firebaseapp.com/__/auth/handler',
     title: 'GitHub Connection',
     centerTitle: false,
@@ -126,10 +126,16 @@ class _AuthScreenState extends State<AuthScreen> {
           ),
           body: Center(
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+
+                foregroundColor: Colors.black, // Цвет текста кнопки
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              ),
+
               onPressed: () {
                 _gitHubSignIn(context);
               },
-              child: const Text("GitHub Connection"),
+              child: const Text("GitHub Sign In"),
             ),
           ),
         );
