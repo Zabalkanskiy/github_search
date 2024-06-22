@@ -1,16 +1,33 @@
 # search_git_hub
 
-A new Flutter project.
+Application for searching and browsing users and their repositories in Github
 
-## Getting Started
+Written in Flutter
 
-This project is a starting point for a Flutter application.
+Uses libraries:  
 
-A few resources to get you started if this is your first Flutter project:
+flutter_bloc, 
+http, 
+github_sign_in_plus
+shared_preferences
+intl
+flutter_dotenv
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+***
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Приложение для поиска и просмотра пользователей и их репозиториев на Github
+
+Написано на Flutter
+
+Использованы библиотеки:   
+
+Uses libraries:  
+flutter_bloc,
+http,
+github_sign_in_plus
+shared_preferences
+intl
+flutter_dotenv
+
+<img src="screen_shots/auth_screen_1.png" width="225" height="400"> <img src="screen_shots/search_screen_1.png" width="225" height="400">
+<img src="screen_shots/search_screen_2.png" width="225" height="400"> <img src="screen_shots/detail_screen_1.png" width="225" height="400">
