@@ -119,7 +119,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
       }
 
-      if (state is AuthSignIn) {
+      if ((state is AuthSignIn)|| (state is AuthSignInError)) {
         return Scaffold(
           appBar: AppBar(
             title: const Text("Search Github"),
